@@ -1,0 +1,11 @@
+server:
+  port: 9008
+  context-path: /service2/
+spring:
+  application:
+    name: scloud-micro-service-2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9002/eureka

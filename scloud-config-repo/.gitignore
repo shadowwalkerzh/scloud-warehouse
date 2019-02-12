@@ -1,0 +1,36 @@
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+logs/
+/out/
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Projects ###
+target
+build-repo/
+classes/
+nohup.out
+/tools/nohup.out
+*.env.json
+*.versionsBackup
+
+### OS ###
+.DS_Store

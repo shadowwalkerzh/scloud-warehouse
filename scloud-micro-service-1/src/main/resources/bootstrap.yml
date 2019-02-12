@@ -1,0 +1,27 @@
+server:
+  port: 9007
+  context-path: /service1/
+spring:
+  application:
+    name: scloud-micro-service-1
+  cloud:
+    config:
+      fail-fast: true
+      request-read-timeout: 90000
+      retry:
+        initial-interval: 15000
+        max-attempts: 10
+        max-interval: 45000
+        multiplier: 1.1
+      label: develop
+      profile: native, local
+      discovery:
+        enabled: true
+        service-id: scloud-config-server
+  profiles:
+    active: native, local
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9002/eureka

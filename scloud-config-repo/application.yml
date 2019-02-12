@@ -1,0 +1,26 @@
+spring:
+  project:
+    name: warehouse
+
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  retryable: true
+  stripPrefix: false
+  routes:
+    scloud-micro-service-1:
+      path: /service1/**
+      serviceId: scloud-micro-service-1
+      stripPrefix: false
+    scloud-micro-service-2:
+      path: /service2/**
+      serviceId: scloud-micro-service-2
+      stripPrefix: false
+
+ribbon:
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: true
+  ConnectTimeout: 30000
+  ReadTimeout: 30000

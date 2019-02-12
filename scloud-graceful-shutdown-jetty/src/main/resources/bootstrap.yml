@@ -1,0 +1,23 @@
+server:
+  port: 9006
+  context-path: /jetty/
+spring:
+  application:
+    name: scloud-graceful-shutdown-jetty
+
+logging:
+  level:
+    root: INFO
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9002/eureka
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+management:
+  port: 19006 # management port, should be different with server port
+  address: 127.0.0.1 # only shutdown request from local shot is allowed

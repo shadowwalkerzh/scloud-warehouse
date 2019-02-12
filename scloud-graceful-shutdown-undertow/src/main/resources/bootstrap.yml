@@ -1,0 +1,19 @@
+server:
+  port: 9005
+  context-path: /undertow/
+spring:
+  application:
+    name: scloud-graceful-shutdown-undertow
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9002/eureka
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+management:
+  port: 19005 # 管理的端口，需要和server.port不同
+  address: 127.0.0.1 #只允许本机发送http shutdown命令
