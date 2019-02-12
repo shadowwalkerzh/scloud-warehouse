@@ -11,7 +11,7 @@ spring:
         native:
           search-locations: classpath:config
         git:
-          uri: https://github.com/peerlesszh/warehouse.git/scloud-config-repo
+          uri: https://github.com/peerlesszh/scloud-config-repo.git
       discovery:
         enabled: true
 
