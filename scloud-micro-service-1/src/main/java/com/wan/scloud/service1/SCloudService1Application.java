@@ -1,5 +1,6 @@
 package com.wan.scloud.service1;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -16,13 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SCloudService1Application {
 
+    @Value("${zuul.retryable}")
+    private String projectName;
+
     public static void main(String[] args) {
         SpringApplication.run(SCloudService1Application.class, args);
     }
 
     @GetMapping(value = "ping")
     public String service1Ping() {
-        return "PONG";
+        return projectName;
     }
 
 }

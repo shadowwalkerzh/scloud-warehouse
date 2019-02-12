@@ -4,6 +4,22 @@ server:
 spring:
   application:
     name: scloud-micro-service-2
+  cloud:
+    config:
+      fail-fast: true
+      request-read-timeout: 90000
+      retry:
+        initial-interval: 15000
+        max-attempts: 10
+        max-interval: 45000
+        multiplier: 1.1
+      label: develop
+      profile: local
+      discovery:
+        enabled: true
+        service-id: scloud-config-server
+  profiles:
+    active: local
 
 eureka:
   client:

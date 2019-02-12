@@ -5,13 +5,13 @@ server:
 spring:
   application:
     name: scloud-config-server
-  profiles:
-    active: local
   cloud:
     config:
       server:
         native:
           search-locations: classpath:config
+        git:
+          uri: https://github.com/peerlesszh/warehouse.git/scloud-config-repo
       discovery:
         enabled: true
 

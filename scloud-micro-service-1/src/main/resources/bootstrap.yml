@@ -6,7 +6,7 @@ spring:
     name: scloud-micro-service-1
   cloud:
     config:
-      fail-fast: true
+#      fail-fast: true
       request-read-timeout: 90000
       retry:
         initial-interval: 15000
@@ -14,14 +14,18 @@ spring:
         max-interval: 45000
         multiplier: 1.1
       label: develop
-      profile: native, local
+      profile: local,develop
       discovery:
         enabled: true
         service-id: scloud-config-server
   profiles:
-    active: local
+    active: local, develop
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9002/eureka
+
+logging:
+  level:
+    root: debug

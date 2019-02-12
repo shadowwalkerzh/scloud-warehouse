@@ -35,7 +35,6 @@ nohup.out
 /tools/nohup.out
 *.env.json
 *.versionsBackup
-
 ### OS ###
 .DS_Store
 

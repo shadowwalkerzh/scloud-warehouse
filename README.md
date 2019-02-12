@@ -1,10 +1,6 @@
 ### scloud-streaming-flink
 
 
-### scloud-config-repo
-Git repository for scloud project configurations
-
-
 ### scloud-config-server
 spring cloud config server project
 
