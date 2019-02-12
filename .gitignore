@@ -35,6 +35,7 @@ nohup.out
 /tools/nohup.out
 *.env.json
 *.versionsBackup
+/scloud-config-repo
 ### OS ###
 .DS_Store
 
