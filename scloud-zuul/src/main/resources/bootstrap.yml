@@ -5,7 +5,21 @@ spring:
   application:
     name: scloud-zuul
   profiles:
-    active: develop
+    active: local, develop
+  cloud:
+    config:
+      fail-fast: true
+      request-read-timeout: 90000
+      retry:
+        initial-interval: 15000
+        max-attempts: 10
+        max-interval: 45000
+        multiplier: 1.1
+      label: develop
+      profile: local, develop
+      discovery:
+        enabled: true
+        service-id: scloud-config-server
 
 eureka:
   client:

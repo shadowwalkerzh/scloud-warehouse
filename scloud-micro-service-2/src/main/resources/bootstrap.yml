@@ -14,12 +14,12 @@ spring:
         max-interval: 45000
         multiplier: 1.1
       label: develop
-      profile: local
+      profile: local, develop
       discovery:
         enabled: true
         service-id: scloud-config-server
   profiles:
-    active: local
+    active: local, develop
 
 eureka:
   client:
