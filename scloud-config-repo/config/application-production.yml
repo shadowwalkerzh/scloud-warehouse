@@ -1,3 +1,0 @@
-spring:
-  project:
-    name: warehouse from config directory with production profile

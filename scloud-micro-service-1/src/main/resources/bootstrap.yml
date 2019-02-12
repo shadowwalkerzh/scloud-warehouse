@@ -19,7 +19,7 @@ spring:
         enabled: true
         service-id: scloud-config-server
   profiles:
-    active: native, local
+    active: local
 
 eureka:
   client:
