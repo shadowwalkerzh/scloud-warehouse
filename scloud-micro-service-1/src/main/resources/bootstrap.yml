@@ -6,7 +6,7 @@ spring:
     name: scloud-micro-service-1
   cloud:
     config:
-#      fail-fast: true
+      fail-fast: true
       request-read-timeout: 90000
       retry:
         initial-interval: 15000
@@ -28,4 +28,4 @@ eureka:
 
 logging:
   level:
-    root: debug
+    root: INFO

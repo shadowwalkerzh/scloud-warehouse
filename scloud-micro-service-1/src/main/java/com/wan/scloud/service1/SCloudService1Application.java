@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SCloudService1Application {
 
-    @Value("${zuul.retryable}")
+    @Value("${spring.project.name:default project name}")
     private String projectName;
 
     public static void main(String[] args) {
