@@ -36,6 +36,10 @@ public class SCloudServiceApplication {
     @GetMapping(value = "retry")
     public String service1Retry() throws RuntimeException {
         throw new RuntimeException("Exception and retry...................");
+
+        // comment last row and uncommented below blocks on another server port
+        // log.info(">>>>>>>>>>>>>>>>>>Called service1/ping>>>>>>>>>>>>>>>>>>>");
+        // return projectName;
     }
 
 }
