@@ -1,4 +1,6 @@
-package com.wan.scloud.service1;
+package com.wan.scloud.service;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -12,21 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
  * Description:
  */
 
+@Slf4j
 @RestController
 @EnableEurekaClient
 @SpringBootApplication
-public class SCloudService1Application {
+public class SCloudServiceApplication {
 
     @Value("${spring.project.name:default project name}")
     private String projectName;
 
     public static void main(String[] args) {
-        SpringApplication.run(SCloudService1Application.class, args);
+        SpringApplication.run(SCloudServiceApplication.class, args);
     }
 
     @GetMapping(value = "ping")
     public String service1Ping() {
+        log.info(">>>>>>>>>>>>>>>>>>Called service1/ping>>>>>>>>>>>>>>>>>>>");
         return projectName;
+    }
+
+    @GetMapping(value = "retry")
+    public String service1Retry() throws RuntimeException {
+        throw new RuntimeException("Exception and retry...................");
     }
 
 }

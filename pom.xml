@@ -25,8 +25,7 @@
         <module>scloud-hystrix</module>
         <module>scloud-sleuth</module>
         <module>sboot-streaming-flink</module>
-        <module>scloud-micro-service-1</module>
-        <module>scloud-micro-service-2</module>
+        <module>scloud-micro-service</module>
     </modules>
 
     <properties>

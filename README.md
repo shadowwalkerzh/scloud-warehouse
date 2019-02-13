@@ -62,16 +62,18 @@ Destroying Spring FrameworkServlet 'dispatcherServlet'
 ### scloud-hystrix
 
 
-### scloud-micro-service-1
-
-
-### scloud-micro-service-2
+### scloud-micro-service
+> This is a micro service implemented with Spring Cloud and can access through scloud-zuul
 
 
 ### scloud-sleuth
 
 
 ### scloud-zuul
+1. routing request
+    1. start scloud-eureka > start scloud-config-server > start scloud-micro-service > start scloud-zuul
+    2. execute `curl http://localhost:9007/service/ping`, console will print ``
+2. retry request with specific http status codes
 
 
 
