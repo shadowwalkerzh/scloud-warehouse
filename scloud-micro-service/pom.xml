@@ -9,7 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>scloud-scloud-micro-service</artifactId>
+    <artifactId>scloud-micro-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>scloud-micro-service-1</module>
+        <module>scloud-micro-service-2</module>
+        <module>scloud-micro-service-core</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -34,16 +40,14 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.wan.scloud.service.SCloudServiceApplication</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.wan</groupId>
+                <artifactId>scloud-micro-service-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

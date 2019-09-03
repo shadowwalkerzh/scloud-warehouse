@@ -1,9 +1,9 @@
 server:
-  port: 9007
-  context-path: /service/
+  port: 9008
+  context-path: /biz
 spring:
   application:
-    name: scloud-micro-service
+    name: scloud-micro-service-2
   cloud:
     config:
       fail-fast: true
@@ -14,17 +14,17 @@ spring:
         max-interval: 45000
         multiplier: 1.1
       label: develop
-      profile: local,develop
+      profile: develop,${spring.application.name}
       discovery:
         enabled: true
         service-id: scloud-config-server
   profiles:
-    active: local, develop
+    active: develop,${spring.application.name}
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9002/eureka
+      defaultZone: http://localhost:8761/eureka
 
 logging:
   level:
@@ -35,5 +35,5 @@ endpoints:
     enabled: true
     sensitive: false
 management:
-  port: 19007 # management port, should be different with server port
+  port: 29007 # management port, should be different with server port
   address: 127.0.0.1 # only shutdown request from local shot is allowed
