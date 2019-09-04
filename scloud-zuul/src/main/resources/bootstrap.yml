@@ -1,11 +1,10 @@
 server:
   port: 8000
-  context-path: /
 spring:
   application:
     name: scloud-zuul
   profiles:
-    active: local, develop
+    active: develop,${spring.application.name}
   cloud:
     config:
       fail-fast: true
@@ -16,7 +15,7 @@ spring:
         max-interval: 45000
         multiplier: 1.1
       label: develop
-      profile: local, develop
+      profile: develop,${spring.application.name}
       discovery:
         enabled: true
         service-id: scloud-config-server

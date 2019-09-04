@@ -1,6 +1,5 @@
 server:
   port: 9007
-  context-path: /biz
 spring:
   application:
     name: scloud-micro-service-1

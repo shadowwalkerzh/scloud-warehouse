@@ -69,15 +69,22 @@ Destroying Spring FrameworkServlet 'dispatcherServlet'
 
 
 ### scloud-zuul
-1. routing request
-    1. start scloud-eureka > start scloud-config-server > start scloud-micro-service > start scloud-zuul
-    2. execute `curl http://localhost:9007/service/ping`, console will print `warehouse develop profile`
-2. zuul retry request when client return specific http status codes
-    1. start scloud-eureka > start scloud-config-server > start scloud-zuul> start scloud-micro-service:9007
-    2. change the retry api and uncomment the code blocks, start another scloud-micro-service with port like 9010 other than 9007
-    3. execute `curl http://localhost:9007/service/retry`(try again if request is routed to 9007), console will print `warehouse develop profile`, if scloud-zuul's log level is DEBUG, will see the that zuul will retry after receiving the 500 http code from micro service client like port 9010
+> Before testing, please start projects: scloud-eureka -> scloud-config-server, scloud-micro-service-1, scloud-micro-service-2, scloud-zuul
 
+- Route by Path
+    - curl http://localhost:8000/biz/service1/route-by-path-unique-service-id
+    - curl http://localhost:8000/biz/service2/route-by-path-unique-service-id
+    - curl http://localhost:8000/biz/service/route-by-path-multi-service-id
 
+- Route by Overriding Path
+    - curl http://localhost:8000/biz/service1/override/route-by-cpath
+    - curl http://localhost:8000/biz/service1/override/route-by-dpath
+
+- Route by Service Id
+    - curl http://localhost:8000/biz/service/route-by-path-multi-service-id\?service-id\=22
+
+- Retry Failed Request
+    - curl http://localhost:8000/biz/service2/retry
 
 
 

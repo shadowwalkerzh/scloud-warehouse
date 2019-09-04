@@ -1,6 +1,8 @@
 package com.wan.scloud.zuul.filter;
 
+
 import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,7 +33,10 @@ public class RoutingFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        log.info("RoutingFilter -> run finished......");
+        RequestContext rcx = RequestContext.getCurrentContext();
+        String uri = rcx.getRequest().getRequestURI();
+        rcx.setSendZuulResponse(true);
+        log.info("RoutingFilter -> run with uri: {}", uri);
         return null;
     }
 }
